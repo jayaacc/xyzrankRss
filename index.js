@@ -3,6 +3,7 @@ const cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
+const cron = require('node-cron');
 
 class XyzRankScraper {
   constructor() {
@@ -465,6 +466,27 @@ class XyzRankScraper {
     });
   }
 
+  /**
+   * 自动更新数据（用于定时任务）
+   */
+  async autoUpdateData() {
+    try {
+      console.log('定时任务：开始自动更新播客数据...');
+      console.log('当前时间：', new Date().toLocaleString('zh-CN'));
+      
+      const episodes = await this.getPodcastData();
+      
+      console.log('定时任务：数据更新完成');
+      console.log(`成功处理 ${episodes.length} 个播客，其中 ${episodes.filter(e => e.hasAudio).length} 个有音源`);
+      
+      return episodes;
+      
+    } catch (error) {
+      console.error('定时任务：更新数据失败:', error.message);
+      throw error;
+    }
+  }
+
 }
 
 // 创建HTTP服务器
@@ -631,5 +653,30 @@ server.listen(PORT, () => {
   console.log(`📊 播客数据接口: http://localhost:${PORT}/api/podcasts`);
   console.log(`📁 静态文件目录: http://localhost:${PORT}/public`);
   console.log('');
+  
+  // 设置定时任务：每天上午8点自动更新数据
+  cron.schedule('0 8 * * *', async () => {
+    try {
+      await scraper.autoUpdateData();
+      console.log('定时任务执行完成');
+    } catch (error) {
+      console.error('定时任务执行失败:', error.message);
+    }
+  }, {
+    timezone: 'Asia/Shanghai'
+  });
+  
+  console.log('⏰ 定时任务已设置：每天上午8点自动更新数据');
   console.log('等待请求...');
+  
+  // 服务启动后立即执行一次数据更新（可选）
+  setTimeout(async () => {
+    try {
+      console.log('服务启动后首次数据更新...');
+      await scraper.autoUpdateData();
+      console.log('首次数据更新完成');
+    } catch (error) {
+      console.error('首次数据更新失败:', error.message);
+    }
+  }, 5000); // 延迟5秒执行，确保服务完全启动
 });
