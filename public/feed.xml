@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <atom:link href="http://localhost:3000/public/feed.xml" rel="self" type="application/rss+xml"/>
+    <title><![CDATA[XYZRank 热门播客排行榜]]></title>
+    <link>https://xyzrank.com</link>
+    <language>zh-CN</language>
+    <itunes:author><![CDATA[XYZRank]]></itunes:author>
+    <itunes:summary><![CDATA[来自 xyzrank.com 的热门播客排行榜]]></itunes:summary>
+    <description><![CDATA[来自 xyzrank.com 的热门播客排行榜]]></description>
+    <copyright><![CDATA[Copyright @XYZRank]]></copyright>
+    <itunes:owner>
+      <itunes:name><![CDATA[XYZRank]]></itunes:name>
+      <itunes:email>info@xyzrank.com</itunes:email>
+    </itunes:owner>
+    <itunes:keywords>播客,排行榜,热门</itunes:keywords>
+    <itunes:image href="https://xyzrank.com/favicon.ico"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:category text="Technology">
+      <itunes:category text="Software How-To"/>
+    </itunes:category>
+    <item>
+      <title><![CDATA[S8E1 鲁豫对话蒋胜男 | 她可以为你而死，但不会只为你而活]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/6900a73a740634ca476c35dc</link>
+      <itunes:subtitle><![CDATA[S8E1 鲁豫对话蒋胜男 | 她可以为你而死，但不会只为你而活]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/625635587bfca4e73e990703/lrOAYUfHO27zfzwoxEndzaO6Yvpu.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/625635587bfca4e73e990703/lrOAYUfHO27zfzwoxEndzaO6Yvpu.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>82</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[vol.39有问必答系列 从小事建立情绪免疫系统]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68ff4ae2083a71a4eb785c4f</link>
+      <itunes:subtitle><![CDATA[vol.39有问必答系列 从小事建立情绪免疫系统]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/65cef9e3cace72dff8d98de3/liUy21YxK19xLp6aUgJPkPIXBBbJ.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/65cef9e3cace72dff8d98de3/liUy21YxK19xLp6aUgJPkPIXBBbJ.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>52</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[131. 啊落雨勒夜头：贵州湄潭县陶雪案]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/69032457ecc523ce7520925c</link>
+      <itunes:subtitle><![CDATA[131. 啊落雨勒夜头：贵州湄潭县陶雪案]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/620e4b8f52d497504647ce24/loN6vMWfNEmk7OGMbC7zFfAaVEXV.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/620e4b8f52d497504647ce24/loN6vMWfNEmk7OGMbC7zFfAaVEXV.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>83</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[Vol122.小心保管手机，里面全是秘密]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68f8a1a5083a71a4ebbde7e2</link>
+      <itunes:subtitle><![CDATA[Vol122.小心保管手机，里面全是秘密]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/642ea4a1f54371d8b2d75168/lkgD9CsvZgiWN26e0X5jbwSBQIBx.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/642ea4a1f54371d8b2d75168/lkgD9CsvZgiWN26e0X5jbwSBQIBx.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>106</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[215.大人？我冤枉啊：聊聊成长中的焦虑]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68fb1270083a71a4eb094fd7</link>
+      <itunes:subtitle><![CDATA[215.大人？我冤枉啊：聊聊成长中的焦虑]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/61791d921989541784257779/ln9xo8pWyTrOC4AIrwTs-sI-J8IE.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/61791d921989541784257779/ln9xo8pWyTrOC4AIrwTs-sI-J8IE.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>100</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[E209 对话罗振宇：把自己创造出来]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68fb25c40156720321d693ec</link>
+      <itunes:subtitle><![CDATA[E209 对话罗振宇：把自己创造出来]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/6013f9f58e2f7ee375cf4216/lmdY-K4pS7q_b-K0qxhBXGvsVpC8.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/6013f9f58e2f7ee375cf4216/lmdY-K4pS7q_b-K0qxhBXGvsVpC8.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>98</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[第一次系列：早年的说说集锦，是我第一本青春疼痛文学！]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68fefe730156720321338996</link>
+      <itunes:subtitle><![CDATA[第一次系列：早年的说说集锦，是我第一本青春疼痛文学！]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/5e2839ca418a84a0462431b7/lhlDi3SaYIyCsQ-EUI8-ucZ1I1-N.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/5e2839ca418a84a0462431b7/lhlDi3SaYIyCsQ-EUI8-ucZ1I1-N.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>64</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[咖啡豆｜几乎所有景点都能看到的冰箱贴，为何能够风靡全球？]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68f9e7270156720321b03a04</link>
+      <itunes:subtitle><![CDATA[咖啡豆｜几乎所有景点都能看到的冰箱贴，为何能够风靡全球？]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/60de7c003dd577b40d5a40f3/ltc6hSRY-pe5mh7Je6E7hlLFPN76.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/60de7c003dd577b40d5a40f3/ltc6hSRY-pe5mh7Je6E7hlLFPN76.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>19</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[29.空乘、销售、技能五子棋]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/69009550740634ca4769666c</link>
+      <itunes:subtitle><![CDATA[29.空乘、销售、技能五子棋]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/65bb55f6513a776b57dedb32/lpWas7ytf9pxkybafXkM5Xs3iNSE.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/65bb55f6513a776b57dedb32/lpWas7ytf9pxkybafXkM5Xs3iNSE.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>57</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[vol.548 见面聊聊&东北同乡会｜妹有口音，但有QQ鸡架、嘎拉哈、怪坡、极光和圣诞老人？feat. 班宇]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68fe482486851368eb8055ab</link>
+      <itunes:subtitle><![CDATA[vol.548 见面聊聊&东北同乡会｜妹有口音，但有QQ鸡架、嘎拉哈、怪坡、极光和圣诞老人？feat. 班宇]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://tk.wavpub.com/WPDL_QjacsZSAAXZewSyKunpRpwYyEneNtLbnKDaAMuMQhSeFHXHkUPXHZeucEa-7f.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://tk.wavpub.com/WPDL_QjacsZSAAXZewSyKunpRpwYyEneNtLbnKDaAMuMQhSeFHXHkUPXHZeucEa-7f.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>149</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[名创优品叶国富×罗永浩！重塑线下购物，让人们重新爱上逛街！]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68f8351e2265473020a2058a</link>
+      <itunes:subtitle><![CDATA[名创优品叶国富×罗永浩！重塑线下购物，让人们重新爱上逛街！]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/68981df29e7bcd326eb91d88/ltdPlF6Zr1aGmhHbOPqptuTVr-ng.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/68981df29e7bcd326eb91d88/ltdPlF6Zr1aGmhHbOPqptuTVr-ng.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>174</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[「我累了」凭什么不能是休息的理由？！｜VOL.201]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68fe388301567203211fe7e6</link>
+      <itunes:subtitle><![CDATA[「我累了」凭什么不能是休息的理由？！｜VOL.201]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/61d50d72ee197a3aac3dac42/lk41IE5jZ_S6u_vLAXM6L5MooAGD.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/61d50d72ee197a3aac3dac42/lk41IE5jZ_S6u_vLAXM6L5MooAGD.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>80</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[vol.221可算被你们「歹」到了]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68ff94dc083a71a4eb85ae00</link>
+      <itunes:subtitle><![CDATA[vol.221可算被你们「歹」到了]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/60e43cecc4e7c8188c2f92a4/lgoPuTDCnCgqJxMPJicA44oBQtxo.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/60e43cecc4e7c8188c2f92a4/lgoPuTDCnCgqJxMPJicA44oBQtxo.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>84</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[32. 奶奶的葫芦]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68f9cee90156720321ab3aaf</link>
+      <itunes:subtitle><![CDATA[32. 奶奶的葫芦]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/62176bef42107d36fefdf998/lioMpjvh_990Tc5JAnskC5MKmXiL.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/62176bef42107d36fefdf998/lioMpjvh_990Tc5JAnskC5MKmXiL.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>93</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[EP73《你的父母不再是你的父母》：成年后，我们如何治愈自己]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68ff27fa01567203213ba1bb</link>
+      <itunes:subtitle><![CDATA[EP73《你的父母不再是你的父母》：成年后，我们如何治愈自己]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/62694abdb221dd5908417d1e/lu0L8ck7JTDXOjnCj3sEo-qK1LWs.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/62694abdb221dd5908417d1e/lu0L8ck7JTDXOjnCj3sEo-qK1LWs.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>256</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[No.173 💾 中国操作系统简史：从混沌初开到鸿蒙降世]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68f9086c083a71a4ebce4342</link>
+      <itunes:subtitle><![CDATA[No.173 💾 中国操作系统简史：从混沌初开到鸿蒙降世]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/62382c1103bea1ebfffa1c00/luAtFLytlwA1foLHYV7FwGH9xzI2.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/62382c1103bea1ebfffa1c00/luAtFLytlwA1foLHYV7FwGH9xzI2.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>103</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[燕外之意｜《明亮的夜晚》：妈妈，没有男人我也可以过得很好]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68fedcbf01567203212cd893</link>
+      <itunes:subtitle><![CDATA[燕外之意｜《明亮的夜晚》：妈妈，没有男人我也可以过得很好]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/618c1f39b4bbc129609cf8b9/lteOagzqyZRUvC0F0wX0wsk6mdLu.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/618c1f39b4bbc129609cf8b9/lteOagzqyZRUvC0F0wX0wsk6mdLu.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>173</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[84.和演员陈坤一起的心声特辑：放松下来，让灵魂跟上自己]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68fa37e3083a71a4ebf32fee</link>
+      <itunes:subtitle><![CDATA[84.和演员陈坤一起的心声特辑：放松下来，让灵魂跟上自己]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/5e280faa418a84a0461f9bfb/lqvBaMQMktAimzkMrr3aqGsBUn8K.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/5e280faa418a84a0461f9bfb/lqvBaMQMktAimzkMrr3aqGsBUn8K.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>74</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[092.浓人见浓人，把平凡日子活出跌宕起伏]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/68fc2e380156720321eef26b</link>
+      <itunes:subtitle><![CDATA[092.浓人见浓人，把平凡日子活出跌宕起伏]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/605b0d5d64b27cf2f137f131/ltdN_Zs5UFiiLNxD4WkSTLFnRxTT.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/605b0d5d64b27cf2f137f131/ltdN_Zs5UFiiLNxD4WkSTLFnRxTT.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>83</itunes:duration>
+    </item>
+    <item>
+      <title><![CDATA[272-最优秀的学生为何失去了读书的能力？]]></title>
+      <itunes:author><![CDATA[未知作者]]></itunes:author>
+      <link>https://www.xiaoyuzhoufm.com/episode/690675da48dbe0eb56f3f4f4</link>
+      <itunes:subtitle><![CDATA[272-最优秀的学生为何失去了读书的能力？]]></itunes:subtitle>
+      <description><![CDATA[<p>无描述</p>]]></description>
+      
+      <enclosure url="https://media.xyzcdn.net/64acd33c7a3d479103fbd32d/lulIQTZqaX_GEvhaUxNuWBFN6b2w.m4a" length="0" type="audio/mpeg"/>
+      <guid>https://media.xyzcdn.net/64acd33c7a3d479103fbd32d/lulIQTZqaX_GEvhaUxNuWBFN6b2w.m4a</guid>
+      <pubDate>Fri, 07 Nov 2025 05:53:25 GMT</pubDate>
+      <itunes:duration>39</itunes:duration>
+    </item>
+  </channel>
+</rss>

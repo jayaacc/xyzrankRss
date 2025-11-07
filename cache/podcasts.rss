@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>XYZRank 热门播客排行榜</title>
+    <description>来自 xyzrank.com 的热门播客排行榜</description>
+    <link>https://xyzrank.com</link>
+    <lastBuildDate>Fri, 07 Nov 2025 05:13:08 GMT</lastBuildDate>
+    <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+    <ttl>60</ttl>
+    <atom:link href="http://localhost:3000/rss" rel="self" type="application/rss+xml" />
+    <itunes:author>XYZRank</itunes:author>
+    <itunes:summary>热门播客排行榜，每日更新</itunes:summary>
+    <itunes:category text="Technology" />
+    
+    <item>
+      <title>S8E1 鲁豫对话蒋胜男 | 她可以为你而死，但不会只为你而活</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/1</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-1</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>vol.39有问必答系列 从小事建立情绪免疫系统</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/2</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-2</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>131. 啊落雨勒夜头：贵州湄潭县陶雪案</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/3</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-3</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>Vol122.小心保管手机，里面全是秘密</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/4</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-4</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>215.大人？我冤枉啊：聊聊成长中的焦虑</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/5</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-5</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>E209 对话罗振宇：把自己创造出来</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/6</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-6</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>第一次系列：早年的说说集锦，是我第一本青春疼痛文学！</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/7</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-7</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>咖啡豆｜几乎所有景点都能看到的冰箱贴，为何能够风靡全球？</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/8</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-8</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>29.空乘、销售、技能五子棋</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/9</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-9</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>vol.548 见面聊聊&amp;东北同乡会｜妹有口音，但有QQ鸡架、嘎拉哈、怪坡、极光和圣诞老人？feat. 班宇</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/10</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-10</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>名创优品叶国富×罗永浩！重塑线下购物，让人们重新爱上逛街！</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/11</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-11</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>「我累了」凭什么不能是休息的理由？！｜VOL.201</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/12</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-12</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>vol.221可算被你们「歹」到了</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/13</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-13</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>32. 奶奶的葫芦</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/14</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-14</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>EP73《你的父母不再是你的父母》：成年后，我们如何治愈自己</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/15</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-15</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>No.173 💾 中国操作系统简史：从混沌初开到鸿蒙降世</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/16</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-16</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>燕外之意｜《明亮的夜晚》：妈妈，没有男人我也可以过得很好</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/17</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-17</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>84.和演员陈坤一起的心声特辑：放松下来，让灵魂跟上自己</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/18</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-18</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>092.浓人见浓人，把平凡日子活出跌宕起伏</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/19</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-19</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>272-最优秀的学生为何失去了读书的能力？</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/20</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-20</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>E51.他的“深情”：橘郡母子双尸案</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/21</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-21</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>492 - 再出发｜四十岁倒计时，我要为下一赛段做好准备</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/22</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-22</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>Vol.57 惠英红：才65，我还年轻</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/23</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-23</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>Vol.229 一次性说清并购这件事</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/24</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-24</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>VOL 201 - 我们的灵魂会在几岁死去？</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/25</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-25</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>vol:113 开局桌游领导来播客，被当场说破防了？</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/26</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-26</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>No. 256 - 重写家庭叙事，原来我们都能在爱里获得自由</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/27</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-27</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>E130.学新东西尽量先摸清框架，体系完整先于逻辑自洽和观点正误</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/28</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-28</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>福说聊天会：世间烦恼三千丝，唯有美貌最动人！</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/29</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-29</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>寻找时间的痕迹，唤醒每个人的 “普鲁斯特时刻”</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/30</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-30</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>vol.742 老有所依，终有所安，一场关于养老的温暖对话</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/31</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-31</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>Vol.198 你不需要所有人的喜欢</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/32</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-32</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>91.漫谈闯韩归国男女：谁最努力？谁不争气？谁是抽象圣体？</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/33</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-33</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>257 日本知识分子80多年前针对“战争”这道题都有哪些解法？</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/34</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-34</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>#366  大选一年后，特朗普的经济承诺兑现了吗？</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/35</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-35</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>知道早睡好，但就是睡不着怎么办！早睡成功的具体办法 | EP092</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/36</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-36</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>253</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/37</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-37</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>除了送外卖，体制内还能怎么搞副业？</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/38</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-38</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>Ep178 35 岁成为了国家二级运动员——地球 online和人生复利</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/39</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-39</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>Vol.90 瑞幸、夸父、摩拜，和愉悦资本聊消费圈内幕</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/40</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-40</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>vol.1337 猛犸象也到了信命的年纪, 玄学这一块儿的</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/41</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-41</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>Vol.221｜人要花多长时间，才能心安理得虚度光阴？</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/42</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-42</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>Vol.137 平台、学历、个人能力，如何在商业世界中准确定位自我价值？｜职场本硕博Q&amp;A</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/43</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-43</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>80 贝叶斯定理｜性感大脑必备：如何聪明地改变主意</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/44</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-44</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>443 血色婆罗洲：从兰芳公司到冷战中的印尼华人游击队</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/45</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-45</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>EP.117 卖房，现在毫无尊重可言！</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/46</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-46</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>大小s创造的真善美世界</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/47</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-47</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>聊聊为什么我们如此讨厌“登味儿”？｜Vol.136 对话梁宁</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/48</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-48</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>97.父亲的法典：印度德里十一口离奇灭门案</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/49</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-49</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+    <item>
+      <title>【随机波动163】校园餐：宏大又微小，喂养即政治</title>
+      <description>无描述</description>
+      <link>http://localhost:3000/episode/50</link>
+      <pubDate>Fri, 07 Nov 2025 05:13:08 GMT</pubDate>
+      <guid isPermaLink="false">episode-50</guid>
+      
+      <itunes:author>未知作者</itunes:author>
+      
+      
+    </item>
+  </channel>
+</rss>
