@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZRank 播客排行榜 - 管理面板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            color: #1d1d1f;
+            line-height: 1.47059;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 21px;
+            color: #86868b;
+            font-weight: 400;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h2 {
+            color: #1d1d1f;
+            margin-bottom: 24px;
+            font-size: 28px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px 16px;
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            border-radius: 12px;
+            color: white;
+            transition: transform 0.2s ease;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.02);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin: 8px 0;
+            min-width: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #8e8e93 0%, #636366 100%);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #34C759 0%, #30D158 100%);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #FF3B30 0%, #FF453A 100%);
+        }
+
+        .status {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 4px solid #007AFF;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .status.success {
+            border-left-color: #34C759;
+            background: rgba(52, 199, 89, 0.1);
+        }
+
+        .status.error {
+            border-left-color: #FF3B30;
+            background: rgba(255, 59, 48, 0.1);
+        }
+
+        .log-container {
+            max-height: 300px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.9);
+            color: #f5f5f7;
+            padding: 16px;
+            border-radius: 12px;
+            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+            margin-top: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .log-line {
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .log-time {
+            color: #86868b;
+            font-weight: 500;
+        }
+
+        .log-info {
+            color: #64D2FF;
+        }
+
+        .log-error {
+            color: #FF6961;
+        }
+
+        .features {
+            margin-top: 32px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateX(4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .feature-item strong {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .feature-item div {
+            color: #86868b;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .quick-links a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 834px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .header h1 {
+                font-size: 36px;
+            }
+            
+            .header p {
+                font-size: 18px;
+            }
+            
+            .card {
+                padding: 24px;
+            }
+            
+            .btn {
+                min-width: 100%;
+                margin: 6px 0;
+            }
+            
+            .quick-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 414px) {
+            .container {
+                padding: 20px 16px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .header p {
+                font-size: 16px;
+            }
+            
+            .card h2 {
+                font-size: 24px;
+            }
+            
+            .stat-number {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎧 XYZRank 播客排行榜</h1>
+            <p>智能播客数据抓取与RSS生成系统</p>
+        </div>
+
+        <div class="dashboard">
+            <div class="card">
+                <h2>📊 系统状态</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalEpisodes">0</div>
+                        <div class="stat-label">总播客数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="audioEpisodes">0</div>
+                        <div class="stat-label">有音源数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="feedItems">0</div>
+                        <div class="stat-label">RSS项目数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="lastUpdate">-</div>
+                        <div class="stat-label">最后更新</div>
+                    </div>
+                </div>
+                
+                <div class="status" id="statusMessage">
+                    系统正在启动中...
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>⚡ 操作面板</h2>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button class="btn" onclick="updateData()" id="updateBtn">
+                        🔄 更新播客数据
+                    </button>
+                    <button class="btn btn-success" onclick="generateXML()" id="generateBtn">
+                        📄 重新生成 RSS
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearCache()" id="clearBtn">
+                        🗑️ 清除缓存
+                    </button>
+                    <button class="btn btn-danger" onclick="forceUpdate()" id="forceBtn">
+                        💥 强制全量更新
+                    </button>
+                </div>
+                
+                <div class="log-container" id="logContainer">
+                    <div class="log-line"><span class="log-time">[系统]</span> <span class="log-info">欢迎使用 XYZRank 播客系统</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🌟 功能特性</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <div>
+                        <strong>智能数据抓取</strong><br>
+                        自动从 xyzrank.com 抓取热门播客排行榜数据
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎵</div>
+                    <div>
+                        <strong>音源地址提取</strong><br>
+                        自动解析播客页面，提取真实音频文件地址
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📡</div>
+                    <div>
+                        <strong>RSS 订阅生成</strong><br>
+                        生成标准 RSS 2.0 格式的播客订阅源
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⏰</div>
+                    <div>
+                        <strong>定时自动更新</strong><br>
+                        每天上午 8 点自动更新数据（可手动触发）
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div>
+                        <strong>多平台支持</strong><br>
+                        兼容 Apple Podcasts、Spotify 等主流播客客户端
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔗 快速链接</h2>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="/public/feed.xml" target="_blank" class="btn">📄 RSS 订阅源</a>
+                <a href="/api/podcasts" target="_blank" class="btn btn-secondary">📊 原始数据</a>
+                <a href="/public" target="_blank" class="btn btn-secondary">📁 文件管理</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let logEntries = [];
+
+        function addLog(message, type = 'info') {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('zh-CN');
+            const logLine = `<div class="log-line"><span class="log-time">[${timeStr}]</span> <span class="log-${type}">${message}</span></div>`;
+            
+            logEntries.push({time: timeStr, message, type});
+            const logContainer = document.getElementById('logContainer');
+            logContainer.innerHTML += logLine;
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        function updateStatus(message, isSuccess = true) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.className = 'status ' + (isSuccess ? 'success' : 'error');
+        }
+
+        async function updateStats() {
+            try {
+                const response = await fetch('/api/podcasts');
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('totalEpisodes').textContent = data.count || 0;
+                    document.getElementById('audioEpisodes').textContent = data.data.filter(ep => ep.hasAudio).length;
+                    
+                    // 获取 RSS 项目数
+                    const feedResponse = await fetch('/public/feed.xml');
+                    const feedText = await feedResponse.text();
+                    const itemCount = (feedText.match(/<item>/g) || []).length;
+                    document.getElementById('feedItems').textContent = itemCount;
+                    
+                    // 最后更新时间
+                    const lastUpdate = new Date().toLocaleString('zh-CN');
+                    document.getElementById('lastUpdate').textContent = lastUpdate.split(' ')[0];
+                }
+            } catch (error) {
+                console.error('获取统计数据失败:', error);
+            }
+        }
+
+        async function updateData() {
+            const btn = document.getElementById('updateBtn');
+            btn.disabled = true;
+            btn.innerHTML = '⏳ 更新中...';
+            
+            addLog('开始更新播客数据...');
+            
+            try {
+                const response = await fetch('/api/update-data', {
+                    method: 'POST'
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    addLog(`数据更新成功！处理了 ${result.count} 个播客`);
+                    updateStatus('数据更新成功', true);
+                } else {
+                    addLog(`更新失败: ${result.error}`, 'error');
+                    updateStatus('更新失败', false);
+                }
+            } catch (error) {
+                addLog(`请求失败: ${error.message}`, 'error');
+                updateStatus('请求失败', false);
+            }
+            
+            btn.disabled = false;
+            btn.innerHTML = '🔄 更新播客数据';
+            updateStats();
+        }
+
+        async function generateXML() {
+            const btn = document.getElementById('generateBtn');
+            btn.disabled = true;
+            btn.innerHTML = '⏳ 生成中...';
+            
+            addLog('开始重新生成 RSS 文件...');
+            
+            try {
+                const response = await fetch('/api/generate-xml', {
+                    method: 'POST'
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    addLog(`RSS 生成成功！包含 ${result.itemCount} 个播客项目`);
+                    updateStatus('RSS 生成成功', true);
+                } else {
+                    addLog(`生成失败: ${result.error}`, 'error');
+                    updateStatus('生成失败', false);
+                }
+            } catch (error) {
+                addLog(`请求失败: ${error.message}`, 'error');
+                updateStatus('请求失败', false);
+            }
+            
+            btn.disabled = false;
+            btn.innerHTML = '📄 重新生成 RSS';
+            updateStats();
+        }
+
+        async function clearCache() {
+            const btn = document.getElementById('clearBtn');
+            btn.disabled = true;
+            btn.innerHTML = '⏳ 清除中...';
+            
+            addLog('开始清除缓存...');
+            
+            try {
+                const response = await fetch('/api/clear-cache', {
+                    method: 'POST'
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    addLog('缓存清除成功');
+                    updateStatus('缓存清除成功', true);
+                } else {
+                    addLog(`清除失败: ${result.error}`, 'error');
+                    updateStatus('清除失败', false);
+                }
+            } catch (error) {
+                addLog(`请求失败: ${error.message}`, 'error');
+                updateStatus('请求失败', false);
+            }
+            
+            btn.disabled = false;
+            btn.innerHTML = '🗑️ 清除缓存';
+            updateStats();
+        }
+
+        async function forceUpdate() {
+            const btn = document.getElementById('forceBtn');
+            btn.disabled = true;
+            btn.innerHTML = '⏳ 强制更新中...';
+            
+            addLog('开始强制全量更新...');
+            
+            try {
+                const response = await fetch('/api/force-update', {
+                    method: 'POST'
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    addLog(`强制更新成功！处理了 ${result.count} 个播客`);
+                    updateStatus('强制更新成功', true);
+                } else {
+                    addLog(`强制更新失败: ${result.error}`, 'error');
+                    updateStatus('强制更新失败', false);
+                }
+            } catch (error) {
+                addLog(`请求失败: ${error.message}`, 'error');
+                updateStatus('请求失败', false);
+            }
+            
+            btn.disabled = false;
+            btn.innerHTML = '💥 强制全量更新';
+            updateStats();
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            addLog('系统初始化完成');
+            updateStats();
+            
+            // 每30秒更新一次状态
+            setInterval(updateStats, 30000);
+        });
+    </script>
+</body>
+</html>

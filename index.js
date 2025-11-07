@@ -315,7 +315,7 @@ class XyzRankScraper {
     
     let rssItems = '';
     
-    episodes.slice(0, 50).forEach((episode, index) => {
+    episodes.forEach((episode, index) => {
       const title = this.escapeXml(episode.title || '未知标题');
       const description = this.escapeXml(episode.description || episode.title || '无描述');
       const author = this.escapeXml(episode.podcastName || '未知作者');
@@ -324,7 +324,7 @@ class XyzRankScraper {
       const publishDate = episode.publishDate ? new Date(episode.publishDate).toUTCString() : now;
       
       // 生成播客链接 - 如果有音频链接则使用音频链接，否则使用默认链接
-      const link = audioUrl || `http://localhost:3000/episode/${index + 1}`;
+      const link = audioUrl || `http://localhost:5777/episode/${index + 1}`;
       
       rssItems += `
     <item>
@@ -349,7 +349,7 @@ class XyzRankScraper {
     <lastBuildDate>${now}</lastBuildDate>
     <pubDate>${now}</pubDate>
     <ttl>60</ttl>
-    <atom:link href="http://localhost:3000/rss" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:5777/rss" rel="self" type="application/rss+xml" />
     <itunes:author>XYZRank</itunes:author>
     <itunes:summary>热门播客排行榜，每日更新</itunes:summary>
     <itunes:category text="Technology" />
@@ -371,7 +371,7 @@ class XyzRankScraper {
       
       // 构建channel信息
       const channelInfo = `
-    <atom:link href="http://localhost:3000/public/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://localhost:5777/public/feed.xml" rel="self" type="application/rss+xml"/>
     <title><![CDATA[XYZRank 热门播客排行榜]]></title>
     <link>https://xyzrank.com</link>
     <language>zh-CN</language>
@@ -393,16 +393,26 @@ class XyzRankScraper {
       // 构建item列表
       let items = '';
       
-      episodes.slice(0, 50).forEach((episode, index) => {
+      episodes.forEach((episode, index) => {
         if (!episode.extractedAudioUrl) return; // 跳过没有音源的播客
         
         const title = episode.title || '未知标题';
-        const author = episode.author || '未知作者';
-        const description = episode.description || '无描述';
+        const author = episode.podcastName || '未知作者';
+        const description = `播放量: ${episode.playCount || 0} | 评论数: ${episode.commentCount || 0} | 订阅数: ${episode.subscription || 0}`;
         const audioUrl = episode.extractedAudioUrl;
-        const coverImage = episode.coverImage || '';
-        const publishDate = episode.publishDate ? new Date(episode.publishDate).toUTCString() : pubDate;
-        const duration = episode.duration || '00:00';
+        const coverImage = episode.logoURL || '';
+        const publishDate = episode.postTime ? new Date(episode.postTime).toUTCString() : pubDate;
+        const duration = episode.duration || 0;
+        
+        // 确定音频文件类型
+        let audioType = 'audio/mpeg';
+        if (audioUrl.includes('.m4a')) {
+          audioType = 'audio/x-m4a';
+        } else if (audioUrl.includes('.mp3')) {
+          audioType = 'audio/mpeg';
+        } else if (audioUrl.includes('.aac')) {
+          audioType = 'audio/aac';
+        }
         
         // 转换时长格式（秒数或时间字符串）
         let durationSeconds = 0;
@@ -416,16 +426,21 @@ class XyzRankScraper {
           }, 0);
         }
         
+        // 对URL进行XML转义
+        const escapedAudioUrl = audioUrl.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+        const escapedLink = (episode.link || audioUrl).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+        const escapedCoverImage = coverImage ? coverImage.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;') : '';
+        
         items += `
     <item>
       <title><![CDATA[${title}]]></title>
       <itunes:author><![CDATA[${author}]]></itunes:author>
-      <link>${episode.link || audioUrl}</link>
+      <link>${escapedLink}</link>
       <itunes:subtitle><![CDATA[${title}]]></itunes:subtitle>
       <description><![CDATA[<p>${description}</p>]]></description>
-      ${coverImage ? `<itunes:image href="${coverImage}"/>` : ''}
-      <enclosure url="${audioUrl}" length="0" type="audio/mpeg"/>
-      <guid>${audioUrl}</guid>
+      ${coverImage ? `<itunes:image href="${escapedCoverImage}"/>` : ''}
+      <enclosure url="${escapedAudioUrl}" length="0" type="${audioType}"/>
+      <guid>${escapedAudioUrl}</guid>
       <pubDate>${publishDate}</pubDate>
       <itunes:duration>${durationSeconds}</itunes:duration>
     </item>`;
@@ -504,6 +519,21 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(200);
     res.end();
     return;
+  }
+  
+  // 首页路由
+  if (req.url === '/' || req.url === '/index.html') {
+    try {
+      const indexPath = path.join(__dirname, 'public', 'index.html');
+      if (fs.existsSync(indexPath)) {
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        const fileStream = fs.createReadStream(indexPath);
+        fileStream.pipe(res);
+        return;
+      }
+    } catch (error) {
+      console.error('处理首页请求时出错:', error.message);
+    }
   }
   
   // 静态文件服务 - 处理public目录
@@ -615,13 +645,29 @@ const server = http.createServer(async (req, res) => {
     // 获取原始播客数据
     try {
       console.log('收到获取播客数据的请求');
-      const episodes = await scraper.getPodcastData();
       
+      // 尝试从缓存读取数据，不重新抓取
+      if (fs.existsSync(scraper.dataCacheFile)) {
+        console.log('从缓存读取播客数据');
+        const cachedData = JSON.parse(fs.readFileSync(scraper.dataCacheFile, 'utf8'));
+        if (cachedData && cachedData.data && Array.isArray(cachedData.data.episodes)) {
+          res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({
+            success: true,
+            data: cachedData.data.episodes,
+            count: cachedData.data.episodes.length,
+            timestamp: new Date().toISOString()
+          }, null, 2));
+          return;
+        }
+      }
+      
+      // 如果没有缓存数据，返回空数据
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
       res.end(JSON.stringify({
         success: true,
-        data: episodes,
-        count: episodes.length,
+        data: [],
+        count: 0,
         timestamp: new Date().toISOString()
       }, null, 2));
       
@@ -634,49 +680,169 @@ const server = http.createServer(async (req, res) => {
         timestamp: new Date().toISOString()
       }));
     }
+  } else if (req.url === '/api/update-data' && req.method === 'POST') {
+    // 手动更新数据
+    try {
+      console.log('收到手动更新数据请求');
+      const episodes = await scraper.getPodcastData();
+      
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        success: true,
+        count: episodes.length,
+        audioCount: episodes.filter(e => e.hasAudio).length,
+        message: `成功更新 ${episodes.length} 个播客数据`,
+        timestamp: new Date().toISOString()
+      }));
+      
+    } catch (error) {
+      console.error('手动更新数据时出错:', error.message);
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        success: false,
+        error: error.message,
+        timestamp: new Date().toISOString()
+      }));
+    }
+  } else if (req.url === '/api/generate-xml' && req.method === 'POST') {
+    // 手动生成XML
+    try {
+      console.log('收到手动生成XML请求');
+      
+      // 从缓存读取数据
+      if (!fs.existsSync(scraper.dataCacheFile)) {
+        throw new Error('没有可用的播客数据，请先更新数据');
+      }
+      
+      const cachedData = JSON.parse(fs.readFileSync(scraper.dataCacheFile, 'utf8'));
+      if (!cachedData || !cachedData.data || !Array.isArray(cachedData.data.episodes)) {
+        throw new Error('缓存数据格式不正确');
+      }
+      
+      await scraper.generateFeedXML(cachedData.data.episodes);
+      
+      // 计算生成的item数量
+      const feedPath = path.join(__dirname, 'public', 'feed.xml');
+      const feedContent = fs.readFileSync(feedPath, 'utf8');
+      const itemCount = (feedContent.match(/<item>/g) || []).length;
+      
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        success: true,
+        itemCount: itemCount,
+        message: `成功生成包含 ${itemCount} 个播客的 RSS 文件`,
+        timestamp: new Date().toISOString()
+      }));
+      
+    } catch (error) {
+      console.error('手动生成XML时出错:', error.message);
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        success: false,
+        error: error.message,
+        timestamp: new Date().toISOString()
+      }));
+    }
+  } else if (req.url === '/api/clear-cache' && req.method === 'POST') {
+    // 清除缓存
+    try {
+      console.log('收到清除缓存请求');
+      
+      if (fs.existsSync(scraper.dataCacheFile)) {
+        fs.unlinkSync(scraper.dataCacheFile);
+      }
+      if (fs.existsSync(scraper.rssCacheFile)) {
+        fs.unlinkSync(scraper.rssCacheFile);
+      }
+      
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        success: true,
+        message: '缓存清除成功',
+        timestamp: new Date().toISOString()
+      }));
+      
+    } catch (error) {
+      console.error('清除缓存时出错:', error.message);
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        success: false,
+        error: error.message,
+        timestamp: new Date().toISOString()
+      }));
+    }
+  } else if (req.url === '/api/force-update' && req.method === 'POST') {
+    // 强制全量更新
+    try {
+      console.log('收到强制全量更新请求');
+      
+      // 先清除缓存
+      if (fs.existsSync(scraper.dataCacheFile)) {
+        fs.unlinkSync(scraper.dataCacheFile);
+      }
+      
+      // 重新获取数据
+      const episodes = await scraper.getPodcastData();
+      
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        success: true,
+        count: episodes.length,
+        audioCount: episodes.filter(e => e.hasAudio).length,
+        message: `强制更新完成，处理了 ${episodes.length} 个播客`,
+        timestamp: new Date().toISOString()
+      }));
+      
+    } catch (error) {
+      console.error('强制更新时出错:', error.message);
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        success: false,
+        error: error.message,
+        timestamp: new Date().toISOString()
+      }));
+    }
   } else {
     res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
     res.end(JSON.stringify({
       success: false,
       error: '接口不存在',
-      availableEndpoints: ['/api/endpoint', '/api/podcasts', '/public']
+      availableEndpoints: ['/', '/api/endpoint', '/api/podcasts', '/api/update-data', '/api/generate-xml', '/api/clear-cache', '/api/force-update', '/public']
     }));
   }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5777;
 
 server.listen(PORT, () => {
   console.log(`🚀 XYZRank 播客服务已启动`);
   console.log(`📍 服务地址: http://localhost:${PORT}`);
+  console.log(`🏠 管理面板: http://localhost:${PORT}/`);
   console.log(`🔗 API端点接口: http://localhost:${PORT}/api/endpoint`);
   console.log(`📊 播客数据接口: http://localhost:${PORT}/api/podcasts`);
+  console.log(`📄 RSS订阅源: http://localhost:${PORT}/public/feed.xml`);
   console.log(`📁 静态文件目录: http://localhost:${PORT}/public`);
   console.log('');
   
   // 设置定时任务：每天上午8点自动更新数据
   cron.schedule('0 8 * * *', async () => {
     try {
+      console.log('⏰ 定时任务：开始自动更新数据...');
       await scraper.autoUpdateData();
-      console.log('定时任务执行完成');
+      console.log('⏰ 定时任务执行完成');
     } catch (error) {
-      console.error('定时任务执行失败:', error.message);
+      console.error('⏰ 定时任务执行失败:', error.message);
     }
   }, {
     timezone: 'Asia/Shanghai'
   });
   
   console.log('⏰ 定时任务已设置：每天上午8点自动更新数据');
+  console.log('');
+  console.log('💡 使用说明:');
+  console.log('   1. 访问 http://localhost:5777/ 打开管理面板');
+  console.log('   2. 在管理面板中手动更新数据或生成RSS');
+  console.log('   3. 订阅 http://localhost:5777/public/feed.xml 到播客客户端');
+  console.log('');
   console.log('等待请求...');
-  
-  // 服务启动后立即执行一次数据更新（可选）
-  setTimeout(async () => {
-    try {
-      console.log('服务启动后首次数据更新...');
-      await scraper.autoUpdateData();
-      console.log('首次数据更新完成');
-    } catch (error) {
-      console.error('首次数据更新失败:', error.message);
-    }
-  }, 5000); // 延迟5秒执行，确保服务完全启动
 });
