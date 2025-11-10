@@ -5,6 +5,8 @@ const fs = require('fs');
 const path = require('path');
 const cron = require('node-cron');
 
+const PORT = process.env.PORT || 5777;
+
 class XyzRankScraper {
   constructor() {
     this.baseUrl = 'https://xyzrank.com';
@@ -324,7 +326,7 @@ class XyzRankScraper {
       const publishDate = episode.publishDate ? new Date(episode.publishDate).toUTCString() : now;
       
       // 生成播客链接 - 如果有音频链接则使用音频链接，否则使用默认链接
-      const link = audioUrl || `http://localhost:5777/episode/${index + 1}`;
+      const link = audioUrl || `http://localhost:${PORT}/episode/${index + 1}`;
       
       rssItems += `
     <item>
@@ -349,7 +351,7 @@ class XyzRankScraper {
     <lastBuildDate>${now}</lastBuildDate>
     <pubDate>${now}</pubDate>
     <ttl>60</ttl>
-    <atom:link href="http://localhost:5777/rss" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:${PORT}/rss" rel="self" type="application/rss+xml" />
     <itunes:author>XYZRank</itunes:author>
     <itunes:summary>热门播客排行榜，每日更新</itunes:summary>
     <itunes:category text="Technology" />
@@ -371,7 +373,7 @@ class XyzRankScraper {
       
       // 构建channel信息
       const channelInfo = `
-    <atom:link href="http://localhost:5777/public/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://localhost:${PORT}/public/feed.xml" rel="self" type="application/rss+xml"/>
     <title><![CDATA[XYZRank 热门播客排行榜]]></title>
     <link>https://xyzrank.com</link>
     <language>zh-CN</language>
@@ -812,7 +814,7 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5777;
+
 
 server.listen(PORT, () => {
   console.log(`🚀 XYZRank 播客服务已启动`);
@@ -840,9 +842,9 @@ server.listen(PORT, () => {
   console.log('⏰ 定时任务已设置：每天上午8点自动更新数据');
   console.log('');
   console.log('💡 使用说明:');
-  console.log('   1. 访问 http://localhost:5777/ 打开管理面板');
+  console.log('   1. 访问 http://localhost:'+PORT+'/ 打开管理面板');
   console.log('   2. 在管理面板中手动更新数据或生成RSS');
-  console.log('   3. 订阅 http://localhost:5777/public/feed.xml 到播客客户端');
+  console.log('   3. 订阅 http://localhost:'+PORT+'/public/feed.xml 到播客客户端');
   console.log('');
   console.log('等待请求...');
 });

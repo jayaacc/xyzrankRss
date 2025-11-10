@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: #ffffff;
             min-height: 100vh;
             color: #1d1d1f;
             line-height: 1.47059;
@@ -54,18 +54,17 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.8);
+            background: #ffffff;
             border-radius: 18px;
             padding: 32px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         .card h2 {
@@ -88,13 +87,15 @@
         .stat-item {
             text-align: center;
             padding: 20px 16px;
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            background: #f5f5f7;
             border-radius: 12px;
-            color: white;
-            transition: transform 0.2s ease;
+            color: #1d1d1f;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
         }
 
         .stat-item:hover {
+            background: #e8e8ed;
             transform: scale(1.02);
         }
 
@@ -112,9 +113,9 @@
         }
 
         .btn {
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
-            color: white;
-            border: none;
+            background: #ffffff;
+            color: #1d1d1f;
+            border: 1px solid rgba(0, 0, 0, 0.2);
             padding: 14px 28px;
             border-radius: 12px;
             font-size: 17px;
@@ -130,8 +131,9 @@
         }
 
         .btn:hover {
+            background: #f5f5f7;
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .btn:active {
@@ -146,35 +148,40 @@
         }
 
         .btn-secondary {
-            background: linear-gradient(135deg, #8e8e93 0%, #636366 100%);
+            background: #f5f5f7;
+            color: #1d1d1f;
         }
 
         .btn-success {
-            background: linear-gradient(135deg, #34C759 0%, #30D158 100%);
+            background: #ffffff;
+            color: #1d1d1f;
+            border-color: rgba(0, 0, 0, 0.3);
         }
 
         .btn-danger {
-            background: linear-gradient(135deg, #FF3B30 0%, #FF453A 100%);
+            background: #ffffff;
+            color: #ff3b30;
+            border-color: rgba(255, 59, 48, 0.3);
         }
 
         .status {
             margin-top: 24px;
             padding: 16px;
             border-radius: 12px;
-            background: rgba(255, 255, 255, 0.9);
-            border-left: 4px solid #007AFF;
+            background: #f5f5f7;
+            border-left: 4px solid #8e8e93;
             font-size: 15px;
             font-weight: 500;
         }
 
         .status.success {
-            border-left-color: #34C759;
-            background: rgba(52, 199, 89, 0.1);
+            border-left-color: #34c759;
+            background: #f5f5f7;
         }
 
         .status.error {
-            border-left-color: #FF3B30;
-            background: rgba(255, 59, 48, 0.1);
+            border-left-color: #ff3b30;
+            background: #f5f5f7;
         }
 
         .log-container {
@@ -217,28 +224,30 @@
             align-items: center;
             margin-bottom: 20px;
             padding: 16px;
-            background: rgba(255, 255, 255, 0.7);
+            background: #f5f5f7;
             border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
             transition: all 0.2s ease;
         }
 
         .feature-item:hover {
-            background: rgba(255, 255, 255, 0.9);
+            background: #e8e8ed;
             transform: translateX(4px);
         }
 
         .feature-icon {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            background: #ffffff;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
-            color: white;
+            color: #1d1d1f;
             font-size: 20px;
             font-weight: 600;
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .feature-item strong {
@@ -330,7 +339,7 @@
 
         <div class="dashboard">
             <div class="card">
-                <h2>📊 系统状态</h2>
+                <h2>📈 系统状态</h2>
                 <div class="stats-grid">
                     <div class="stat-item">
                         <div class="stat-number" id="totalEpisodes">0</div>
@@ -423,7 +432,7 @@
             <h2>🔗 快速链接</h2>
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                 <a href="/public/feed.xml" target="_blank" class="btn">📄 RSS 订阅源</a>
-                <a href="/api/podcasts" target="_blank" class="btn btn-secondary">📊 原始数据</a>
+                <a href="/api/podcasts" target="_blank" class="btn btn-secondary">📋 原始数据</a>
                 <a href="/public" target="_blank" class="btn btn-secondary">📁 文件管理</a>
             </div>
         </div>
